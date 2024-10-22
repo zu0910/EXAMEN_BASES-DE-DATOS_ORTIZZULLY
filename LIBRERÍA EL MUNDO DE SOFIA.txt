@@ -1,0 +1,439 @@
+﻿LIBRERÍA EL MUNDO DE SOFIA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ZULLY FERNANDA ORTIZ AVENDAÑO
+
+
+
+
+
+
+
+
+DOCENTE
+
+
+
+
+
+
+PEDRO FELIPE GÓMEZ BONILLA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAMPUSLANDS
+SANDBOX
+RUTA BASE DE DATOS
+TIBU
+2024
+
+
+
+
+
+
+Tabla de Contenidos
+
+
+Introducción        3
+Caso de Estudio        4
+Planificación        4
+Construcción del Modelo Conceptual        4
+Descripción        4
+Gráfica        5
+Construcción del Modelo Lógico        5
+Descripción        5
+Gráfica        6
+Normalización del Modelo Lógico        6
+Primera Forma Normal (1FN)        6
+Descripción        6
+Gráfica        6
+Segunda Forma Normal (2FN)        7
+Descripción        7
+Gráfica        7
+Tercera Forma Normal (3FN)        7
+Descripción        8
+Gráfica        8
+Construcción del Modelo Físico        8
+Descripción                9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Introducción
+
+
+Librería del mundo de Sofía es un proyecto donde tiene como función diseñar unas bases de datos para una tienda de libros donde gestionará inventario, ventas y clientes. Donde la base de datos permitirá al cliente poder realizar registros y gestionar libros, autores, clientes, pedidos y transacciones de compras.
+
+
+Se evidenciará un diagrama UML E-R donde se representará la estructura de los bases de datos con las relaciones entres las las tablas y las restricciones impuestas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Caso de Estudio
+Para la librería el mundo de sofia se creara una base de datos donde deberá gestionar todo el inventario, las ventas y los clientes, También se debe sacar cada registro para poder tener la información de la gestión de los libros, autores, clientes, pedidos y transacciones de compra, para lograr eso creare un diagrama UML E-R donde se quedará evidenciado toda la base de datos de la tienda,
+
+
+
+
+Planificación
+Construcción del Modelo Conceptual
+
+
+LIBROS : id_libros, titulo, autores, editorial, categoría, fecha_publicacion, ISB, precio, stock.
+AUTORES: id_ autores, nombre, fecha_nacimiento, nacionalidad.
+CLIENTES: id_clientes, nombre, correo_electrónico, teléfono, dirección.
+PEDIDOS: id_pedido, id_libro, cantidad_stock, fecha_compra, estado_pedido.
+TRANSACCIONES: id_transacciones, metodo_pago, monto_total, fecha_transaccion.
+
+
+Relaciones:
+Libros a autores: 1:N
+Libros a clientes: N:1
+Clientes a transacciones: N:1
+Libro a pedidos: 1:N
+
+
+Descripción
+ENTIDADES: LA representación de objetos o conceptos.
+ATRIBUTOS: Propiedades de las características que describen las entidades.
+RELACIONES: Representan la asociación entre las entidades.
+CARDINALIDAD: indica la cantidad de instancias de entidad que pueden estar relacionamos con las instancia de otra entidad
+Uno a uno 1:1
+Uno a muchos 1:N
+Muchos a muchos N:
+
+
+
+
+Gráfica
+  
+
+
+
+
+
+Construcción del Modelo Lógico
+Implica representar de manera estructurada las relaciones y dependencias entre diferentes entidades de una tienda
+Descripción
+* Libros: Incluye atributos como ID_libros ( clave primaria), titulo, id_ autores (llave foranea), editorial, categoría, fecha de publicacion, ISBN, precio y stock.
+* Autores: Incluye atributos como Id_ autores ( clave primaria), nombre, fecha de nacimiento y nacionalidad
+* Clientes: incluye atributos como id_clientes ( clave primaria), nombre, correo electronico, telefono y direccion. 
+* Transacciones : incluyen atributos como ID_transaccion, método de pago, monto total. Fecha de transacción.
+* Pedidos: incluyen atributos como id_pedido (clave primaria), id_libro(clave foránea), cantidad de stock, fecha de compra y estado del pedido
+Gráfica
+  
+
+
+
+Normalización del Modelo Lógico
+Permite organizar los datos a nivel de su estructura para reducir su redundancia en una base de datos
+
+
+Primera Forma Normal (1FN)
+La caracteristica del modelo relacional según la cual un atributo debe ser atómico
+Descripción
+* Cada atributo debe tener valores atomico.
+* Cada fila la misma tabla debe ser unica
+* Debe prevaleves un crecimiento vertical de los datos y no horizontal
+* No deben existir grupos repetidos de datos.
+Gráfica
+
+
+id_libro
+	autor
+	libros
+	precio
+	stock
+	101
+	Ariana Godoy
+	A traves de ti
+Atreves de mi ventana 
+Heist
+Fleur
+	40.000
+50.000
+55.000
+60.000
+	10
+4
+6
+8
+
+
+	102
+	Gabriel Garcia Marquez
+	Cien años de soledad
+Cronicas de una muerte pronunciada
+	40.000
+35.000
+	4
+2
+	103
+	Homero
+	Odisea
+
+
+	30.000
+	5
+	
+
+Segunda Forma Normal (2FN)
+El concepto de dependencia funcional.
+Descripción
+* Estar en 1FN.
+* La relación debe tener una clave principal, de preferencia simple.
+* Cada atributo de la tabla debe depender totalmente del atributo clave.
+Gráfica
+
+
+Codigo
+	id_libro
+	Autor
+	Libros
+	Precio
+	Stock
+	1
+	101
+	Ariana Godoy
+	A traves de ti
+	40.000
+	10
+	2
+	101
+	Ariana Godoy
+	Atreves de mi ventana
+	50.000
+	4
+	3
+	101
+	Ariana Godoy
+	Heist
+	55.000
+	6
+	4
+	101
+	Ariana Godoy
+	Fleur
+	60.000
+	8
+	5
+	102
+	Gabriel Garcia Marquez
+	Cien años de soledad
+	40.000
+	4
+	6
+	102
+	Gabriel Garcia Marquez
+	Cronicas de una muerte pronunciada
+	35.000
+	2
+	7
+	103
+	Homero
+	Odisea
+
+
+	30.000
+	5
+	
+
+Tercera Forma Normal (3FN)
+El concepto de dependencia transitiva.
+Descripción
+* Debe estar en 2FN.
+* No deben existir atributos no principales que dependen transitivamente del atributo clave.
+Gráfica
+
+
+Construcción del Modelo Físico
+Implementación de modelo lógico en un sistema de gestión de bases de datos.
+Descripción
+- tablas y columnas: Las entidades identificadas en el modelo logico se convierten en tablas, y sus atributos se transforman en columnas con tipo de datos especificados:
+INT: entero
+VARCHAR: string
+FOREIGN KEY: clave foranea
+PRIMARY KEY: clave primaria
+
+
+- Relaciones: Las relaciones entre las tablas se implementan mediante.
+
+
+Codigo
